@@ -1,0 +1,22 @@
+<ion-grid >
+    <ion-row >
+      <ion-col [size]="sizeCol" *ngFor="let video of videoList" class="padZero" no-padding>
+
+        <ion-card >
+
+          <ion-card-content no-padding class="padChange">
+            <div>
+              <iframe class="video" [src]="video.url | youtube" frameborder="0"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </ion-card-content>
+
+          <ion-card-header no-padding class="padChange">
+            <ion-card-subtitle >{{video.name}}</ion-card-subtitle>
+          </ion-card-header>
+
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>

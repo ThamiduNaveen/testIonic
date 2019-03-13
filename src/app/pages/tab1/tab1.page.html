@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>First Tab</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="searchPlayList()">load</ion-button>
+  <ion-button (click)="openYoutube()">open</ion-button>
+  <ion-list no-padding>
+    <ion-item button *ngFor="let list of playlists|async">
+      <ion-thumbnail item-start>
+        <img [src]="list.snippet.thumbnails.medium.url"/> 
+      </ion-thumbnail>
+      <ion-label>{{list.snippet.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
